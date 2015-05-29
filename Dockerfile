@@ -20,7 +20,7 @@ RUN curl https://codeload.github.com/antirez/disque/zip/master -o \
 RUN unzip /usr/local/src/disque.zip -d /usr/local/bin/
 RUN cd /usr/local/bin/disque-master && \
     make install clean && \
-    make install tests
+    make tests
 
 RUN cp /usr/local/bin/disque-master/disque.conf /etc/disque.conf
 
