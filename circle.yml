@@ -1,0 +1,12 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - "~/docker"
+  override:
+    - docker info
+    - if [[ -e ~/docker/image.tar ]]; then docker load --input ~/docker/image.tar; fi
+    - docker build -t jobflow/disque .
+    - mkdir -p ~/docker; docker save jobflow/disque > ~/docker/image.tar
