@@ -1,5 +1,6 @@
 # jobflow-disque-docker
 [jobflow.io](http://jobflow.io) standard docker image running disque
+[![Circle CI](https://circleci.com/gh/jobflow/jobflow-disque-docker.svg?style=svg)](https://circleci.com/gh/jobflow/jobflow-disque-docker)
 
 Disque, an in-memory, distributed job queue
 ===
