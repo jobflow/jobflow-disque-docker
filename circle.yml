@@ -11,6 +11,6 @@ dependencies:
     - docker build -t jobflow/disque .
     - mkdir -p ~/docker; docker save jobflow/disque > ~/docker/image.tar
 
-test:docker
+test:
   override:
     - docker run -t -i -w /usr/local/bin/disque-master --entrypoint=/usr/local/bin/disque-master/runtest jobflow/disque
