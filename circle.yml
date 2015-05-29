@@ -10,3 +10,7 @@ dependencies:
     - if [[ -e ~/docker/image.tar ]]; then docker load --input ~/docker/image.tar; fi
     - docker build -t jobflow/disque .
     - mkdir -p ~/docker; docker save jobflow/disque > ~/docker/image.tar
+
+test:docker
+  override:
+    - docker run -t -i -w /usr/local/bin/disque-master --entrypoint=/usr/local/bin/disque-master/runtest jobflow/disque
