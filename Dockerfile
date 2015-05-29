@@ -10,6 +10,7 @@ RUN apt-get install -y --no-install-recommends \
     build-essential \
     ca-certificates \
     curl \
+    tcl8.5 \
     unzip
 
 RUN rm -rf /var/lib/apt/lists
@@ -20,7 +21,7 @@ RUN curl https://codeload.github.com/antirez/disque/zip/master -o \
 RUN unzip /usr/local/src/disque.zip -d /usr/local/bin/
 RUN cd /usr/local/bin/disque-master && \
     make install clean && \
-    make tests
+    make test
 
 RUN cp /usr/local/bin/disque-master/disque.conf /etc/disque.conf
 
