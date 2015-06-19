@@ -4,9 +4,7 @@ MAINTAINER Juan Montemayor <jam1@alum.mit.edu>
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r disque && useradd -r -g disque disque
 
-RUN apt-get update
-
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     ca-certificates \
     curl \
@@ -36,6 +34,6 @@ RUN mkdir /data && chown disque:disque /data && \
 VOLUME /data
 WORKDIR /data
 
-EXPOSE 7711
+EXPOSE 7711 17711
 
 ENTRYPOINT disque-server /etc/disque.conf

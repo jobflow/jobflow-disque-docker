@@ -29,7 +29,7 @@ Currently (27 April 2015) the project is just an alpha quality preview, that was
 
 or from docker hub
 
-    docker run -i -t -d jmontemayor/jobflow-disque:latest
+    docker run -i -t -d -P jobflow/disque
 
 ## Connect
 Find the ip of the running container
@@ -42,4 +42,4 @@ Find the ip of the running container
 
 To connect run:
 
-    ./disque -p 49153 -h 192.168.59.103
+    ./disque -p 49153 -h [DOCKER_IP_ADDRESS]
