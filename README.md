@@ -31,4 +31,8 @@ or from docker hub
 
     docker run -p=7711:7711 -d -P jobflow/disque
 
+To connect run:
+
     ./disque -p 7711
+or
+    redis-cli -p 7711
