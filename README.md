@@ -25,21 +25,15 @@ Currently (27 April 2015) the project is just an alpha quality preview, that was
     docker build -t="jobflow-disque:Dev" .
  
 ## Run Server
-    docker run -d jobflow-disque:Dev
+    docker run -p=7711:7711 -d jobflow-disque:Dev
 
 or from docker hub
 
-    docker run -i -t -d -P jobflow/disque
-
-## Connect
-Find the ip of the running container
-
-    docker ps
-
-    CONTAINER ID        IMAGE                   COMMAND             CREATED             STATUS              PORTS                     NAMES
-
-    123456786765        jobflow-disque:v0.1.1   disque-server     2 minutes ago       Up 2 minutes        0.0.0.0:49153->7711/tcp   tender_banana
+    docker run -p=7711:7711 -d -P jobflow/disque
 
 To connect run:
 
-    ./disque -p 49153 -h [DOCKER_IP_ADDRESS]
+    ./disque -p 7711
+or
+
+    redis-cli -p 7711
